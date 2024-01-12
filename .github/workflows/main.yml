@@ -1,0 +1,67 @@
+      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+
+      env:
+
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+
+    - name: Enable TS
+
+      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+
+    - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+
+    - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+
+    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
+
+    - name: Create Tunnel
+
+      run: .\ngrok\ngrok.exe tcp 3389
+
+Public Last updated: 2023-08-17 11:52:06 AM
+
+Comments
+Rebin  •  4 months 7 days ago Reply
+Good bro
+Milton  •  4 months 3 days ago Reply
+Not Workes
+EHTASHAM  •  4 months 1 day ago Reply
+working smooth. thnx
+not work  •  3 months 26 days ago Reply
+not work received error
+ci  •  3 months 19 days ago Reply
+ci
+Auth error  •  3 months 16 days ago Reply
+Recived Auth error : 
+Error: Process completed with exit code 1.
+
+AAA  •  1 month 24 days ago Reply
+It works thx
+github  •  1 month 19 days ago Reply
+we will ban who use this
+GitHub  •  1 month 18 days ago Reply
+Your data will be hacked
+AAA  •  1 month 17 days ago Reply
+@GitHub  don care still don care
+Githubbelike  •  1 month 16 days ago Reply
+@AAA I will Buy U😂😂😎 
+AAA  •  1 month 3 days ago Reply
+@Githubbelike yeh yeh I cost 81.8q dollars
+Gittu  •  24 days ago Reply
+Mere to L laggeye
+Shayan  •  16 days ago Reply
+Working Bro But I can't open any Emulator in this
+Your Name
+Comment
+
+Download on the Apple Store   Get it on Google Play
+
+© 2009-2024 aNotepad.com
+
+About | Privacy | Features | Resume Builder | Free Fax | Report Abuse
+
+aNotepad.com is your everyday online notepad. You can take notes and share notes online without having to login.
+You can use a rich text editor and download your note as PDF or Word document.
+Best of all - aNotepad is a fast, clean, and easy-to-use notepad online.
+
+
